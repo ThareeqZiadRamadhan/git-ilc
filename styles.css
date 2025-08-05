@@ -191,6 +191,36 @@ body {
     font-weight: 400;
 }
 
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, var(--dark-color) 0%, #111827 100%);
+    border-top: 1px solid #374151;
+}
+
+.footer h5, .footer h6 {
+    color: var(--white);
+}
+
+.footer .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer .contact-info i {
+    color: var(--primary-color);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .success-card {
@@ -215,6 +245,11 @@ body {
     
     .display-5 {
         font-size: 2rem;
+    }
+    
+    .footer .social-links {
+        text-align: center;
+        margin-top: 1rem;
     }
 }
 
