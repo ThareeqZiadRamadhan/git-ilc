@@ -3,11 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INI PUNYAKU 2</title>
+    <title>Transparent Pricing for You</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>INI SAYA</h1>
-    <h2>INI KEDUA</h2>
-    
+    <div class="container-fluid pricing-section">
+        <div class="container">
+            <!-- Header Section -->
+            <div class="text-center mb-5">
+                <h1 class="pricing-title">Transparent Pricing for You</h1>
+                <p class="pricing-subtitle">We offer clean, transparent pricing with no hidden fees. Choose the perfect plan that fits your<br>business needs and budget.</p>
+                
+                <!-- Toggle Buttons -->
+                <div class="toggle-container mt-4">
+                    <button class="toggle-btn active" id="monthly-btn">Monthly</button>
+                    <button class="toggle-btn" id="yearly-btn">Yearly</button>
+                </div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="row justify-content-center">
+                <!-- Free Plan -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3 class="plan-name">Free Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-section">
+                                <span class="price">$00</span>
+                                <p class="price-text">Per user/month, Annual</p>
+                            </div>
+                            
+                            <div class="features-section">
+                                <h4 class="features-title">Feature for this</h4>
+                                <ul class="features-list">
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        HR compliance audit
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        Document management
+                                    </li>
+                                    <li class="feature-item unchecked">
+                                        <span class="checkbox">☐</span>
+                                        24/7 Support at Any Time
+                                    </li>
+                                    <li class="feature-item unchecked">
+                                        <span class="checkbox">☐</span>
+                                        Unlimited Project
+                                    </li>
+                                    <li class="feature-item unchecked">
+                                        <span class="checkbox">☐</span>
+                                        Corrective action plan
+                                    </li>
+                                    <li class="feature-item unchecked">
+                                        <span class="checkbox">☐</span>
+                                        Leadership training programs
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn-get-started btn-outline">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="pricing-card featured">
+                        <div class="card-header">
+                            <div class="pro-badge">Pro Plan</div>
+                            <h3 class="plan-name">Pro Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-section">
+                                <span class="price">$50</span>
+                                <p class="price-text">Per user/month, Annual</p>
+                            </div>
+                            
+                            <div class="features-section">
+                                <h4 class="features-title">Feature for this</h4>
+                                <ul class="features-list">
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        HR compliance audit
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        Document management
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        24/7 Support at Any Time
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        Unlimited Project
+                                    </li>
+                                    <li class="feature-item unchecked">
+                                        <span class="checkbox">☐</span>
+                                        Corrective action plan
+                                    </li>
+                                    <li class="feature-item unchecked">
+                                        <span class="checkbox">☐</span>
+                                        Leadership training programs
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn-get-started btn-filled">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Plan -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <h3 class="plan-name">Performance Plan</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="price-section">
+                                <span class="price">$100</span>
+                                <p class="price-text">Per user/month, Annual</p>
+                            </div>
+                            
+                            <div class="features-section">
+                                <h4 class="features-title">Feature for this</h4>
+                                <ul class="features-list">
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        HR compliance audit
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        Document management
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        24/7 Support at Any Time
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        Unlimited Project
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        Corrective action plan
+                                    </li>
+                                    <li class="feature-item checked">
+                                        <span class="checkmark">✓</span>
+                                        Leadership training programs
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn-get-started btn-outline">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Explore Plan Button -->
+            <div class="text-center mt-5">
+                <button class="btn-explore">Explore plan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
