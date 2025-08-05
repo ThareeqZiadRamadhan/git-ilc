@@ -3,11 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INI PUNYAKU 2</title>
+    <title>Transparent Pricing - Landing Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>INI SAYA</h1>
-    <h2>INI KEDUA</h2>
-    
+    <!-- Main Container -->
+    <div class="container-fluid pricing-section">
+        <div class="container">
+            <!-- Header Section -->
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Transparent Pricing for You</h1>
+                    <p class="lead text-muted mb-4">
+                        We offer clean, transparent pricing with no hidden fees. Choose the perfect plan that fits your business needs and budget.
+                    </p>
+                    
+                    <!-- Pricing Toggle -->
+                    <div class="pricing-toggle d-inline-flex">
+                        <button class="btn toggle-btn active" data-period="monthly">Monthly</button>
+                        <button class="btn toggle-btn" data-period="yearly">Yearly</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="row justify-content-center g-4">
+                <!-- Free Plan -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h3 class="card-title mb-3">Free Plan</h3>
+                            <div class="price-section mb-4">
+                                <span class="price" data-monthly="0" data-yearly="0">$0</span>
+                                <div class="price-period">Per user/month, Annual</div>
+                            </div>
+                            
+                            <div class="features-section text-start">
+                                <h6 class="features-title mb-3">Feature for this</h6>
+                                <ul class="features-list">
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        HR compliance audit
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        Document management
+                                    </li>
+                                    <li class="feature-item not-included">
+                                        <i class="fas fa-times"></i>
+                                        24/7 Support at Any Time
+                                    </li>
+                                    <li class="feature-item not-included">
+                                        <i class="fas fa-times"></i>
+                                        Unlimited Project
+                                    </li>
+                                    <li class="feature-item not-included">
+                                        <i class="fas fa-times"></i>
+                                        Corrective action plan
+                                    </li>
+                                    <li class="feature-item not-included">
+                                        <i class="fas fa-times"></i>
+                                        Leadership training programs
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary btn-cta w-100 mt-4">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card pro-plan h-100">
+                        <div class="popular-badge">Pro Plan</div>
+                        <div class="card-body text-center p-4">
+                            <h3 class="card-title mb-3">Pro Plan</h3>
+                            <div class="price-section mb-4">
+                                <span class="price" data-monthly="50" data-yearly="40">$50</span>
+                                <div class="price-period">Per user/month, Annual</div>
+                            </div>
+                            
+                            <div class="features-section text-start">
+                                <h6 class="features-title mb-3">Feature for this</h6>
+                                <ul class="features-list">
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        HR compliance audit
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        Document management
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        24/7 Support at Any Time
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        Unlimited Project
+                                    </li>
+                                    <li class="feature-item not-included">
+                                        <i class="fas fa-times"></i>
+                                        Corrective action plan
+                                    </li>
+                                    <li class="feature-item not-included">
+                                        <i class="fas fa-times"></i>
+                                        Leadership training programs
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-cta w-100 mt-4">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card pricing-card h-100">
+                        <div class="card-body text-center p-4">
+                            <h3 class="card-title mb-3">Enterprise Plan</h3>
+                            <div class="price-section mb-4">
+                                <span class="price" data-monthly="100" data-yearly="80">$100</span>
+                                <div class="price-period">Per user/month, Annual</div>
+                            </div>
+                            
+                            <div class="features-section text-start">
+                                <h6 class="features-title mb-3">Feature for this</h6>
+                                <ul class="features-list">
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        HR compliance audit
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        Document management
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        24/7 Support at Any Time
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        Unlimited Project
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        Corrective action plan
+                                    </li>
+                                    <li class="feature-item included">
+                                        <i class="fas fa-check"></i>
+                                        Leadership training programs
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <button class="btn btn-outline-primary btn-cta w-100 mt-4">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-auto">
+                    <button class="btn btn-primary btn-lg explore-btn">Explore plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
