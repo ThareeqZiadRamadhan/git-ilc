@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block title %}{{ 'Edit' if user else 'Tambah' }} Pengguna{% endblock %}
+{% block content %}
+<h3 class="mb-3">{{ 'Edit' if user else 'Tambah' }} Pengguna</h3>
+<form method="post" class="row g-3">
+	<div class="col-md-6">
+		<label class="form-label">Nama</label>
+		<input class="form-control" name="name" value="{{ user.name if user else '' }}" required />
+	</div>
+	<div class="col-md-6">
+		<label class="form-label">Email</label>
+		<input type="email" class="form-control" name="email" value="{{ user.email if user else '' }}" required />
+	</div>
+	<div class="col-md-4">
+		<label class="form-label">Role</label>
+		<select class="form-select" name="role">
+			{% set current = user.role if user else 'user' %}
+			<option value="user" {{ 'selected' if current=='user' else '' }}>User</option>
+			<option value="suami" {{ 'selected' if current=='suami' else '' }}>Suami/Admin</option>
+		</select>
+	</div>
+	{% if not user %}
+	<div class="col-md-4">
+		<label class="form-label">Password</label>
+		<input type="password" class="form-control" name="password" required minlength="6" />
+	</div>
+	{% endif %}
+	<div class="col-12">
+		<label class="form-label">Hak Akses (menu yang bisa diakses)</label>
+		{% set allowed = (user.allowed_menus.split(',') if user and user.allowed_menus else []) %}
+		<div class="row row-cols-2 row-cols-md-4 g-2">
+			<div class="col"><label class="form-check"><input class="form-check-input" type="checkbox" name="allowed_menus" value="dashboard" {{ 'checked' if 'dashboard' in allowed else '' }}> <span class="form-check-label">Dashboard</span></label></div>
+			<div class="col"><label class="form-check"><input class="form-check-input" type="checkbox" name="allowed_menus" value="expenses" {{ 'checked' if 'expenses' in allowed else '' }}> <span class="form-check-label">Pengeluaran</span></label></div>
+			<div class="col"><label class="form-check"><input class="form-check-input" type="checkbox" name="allowed_menus" value="loans" {{ 'checked' if 'loans' in allowed else '' }}> <span class="form-check-label">Uang Pinjaman</span></label></div>
+			<div class="col"><label class="form-check"><input class="form-check-input" type="checkbox" name="allowed_menus" value="incomes" {{ 'checked' if 'incomes' in allowed else '' }}> <span class="form-check-label">Uang Mingguan</span></label></div>
+			<div class="col"><label class="form-check"><input class="form-check-input" type="checkbox" name="allowed_menus" value="reports" {{ 'checked' if 'reports' in allowed else '' }}> <span class="form-check-label">Laporan</span></label></div>
+			<div class="col"><label class="form-check"><input class="form-check-input" type="checkbox" name="allowed_menus" value="categories" {{ 'checked' if 'categories' in allowed else '' }}> <span class="form-check-label">Kategori</span></label></div>
+			<div class="col"><label class="form-check"><input class="form-check-input" type="checkbox" name="allowed_menus" value="users" {{ 'checked' if 'users' in allowed else '' }}> <span class="form-check-label">Manajemen Pengguna</span></label></div>
+		</div>
+		<div class="form-text">Catatan: Role suami/admin memiliki akses penuh.</div>
+	</div>
+	<div class="col-12">
+		<button class="btn btn-primary">Simpan</button>
+		<a class="btn btn-secondary" href="{{ url_for('users_management') }}">Batal</a>
+	</div>
+</form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block title %}Kategori Pengeluaran{% endblock %}
+{% block content %}
+<h3 class="mb-3">Kategori Pengeluaran</h3>
+<form method="post" class="row g-2 mb-3">
+	<div class="col-auto">
+		<input class="form-control" name="name" placeholder="Nama kategori" required />
+	</div>
+	<div class="col-auto">
+		<button class="btn btn-primary">Tambah</button>
+	</div>
+</form>
+<table class="table table-bordered">
+	<thead>
+		<tr><th>Nama</th><th style="width:120px">Aksi</th></tr>
+	</thead>
+	<tbody>
+		{% for c in categories %}
+		<tr>
+			<td>{{ c.name }}</td>
+			<td>
+				<form method="post" action="{{ url_for('delete_category', cat_id=c.id) }}" onsubmit="return confirm('Hapus kategori?')">
+					<button class="btn btn-sm btn-danger">Hapus</button>
+				</form>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

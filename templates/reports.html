@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% block title %}Laporan{% endblock %}
+{% block content %}
+<h3 class="mb-3">Laporan</h3>
+<form method="get" class="row g-2 mb-3">
+	<div class="col-md-3">
+		<label class="form-label">Mulai</label>
+		<input type="date" class="form-control" name="start" value="{{ start }}" />
+	</div>
+	<div class="col-md-3">
+		<label class="form-label">Selesai</label>
+		<input type="date" class="form-control" name="end" value="{{ end }}" />
+	</div>
+	<div class="col-md-2 d-flex align-items-end">
+		<button class="btn btn-primary">Terapkan</button>
+	</div>
+</form>
+<div class="row g-3 mb-3">
+	<div class="col-md-3"><div class="card"><div class="card-body"><div>Total Pengeluaran</div><div class="fs-4">{{ total_expenses|currency }}</div></div></div></div>
+	<div class="col-md-3"><div class="card"><div class="card-body"><div>Total Uang Mingguan</div><div class="fs-4">{{ weekly_in|currency }}</div></div></div></div>
+	<div class="col-md-3"><div class="card"><div class="card-body"><div>Net Pinjaman</div><div class="fs-4">{{ net_loans|currency }}</div></div></div></div>
+	<div class="col-md-3"><div class="card"><div class="card-body"><div>Sisa Keuangan</div><div class="fs-4">{{ sisa_keuangan|currency }}</div></div></div></div>
+</div>
+<div class="row g-3">
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-header">Distribusi Pengeluaran</div>
+			<div class="card-body"><canvas id="reportChart" height="180"></canvas></div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-header">Daftar Pengeluaran</div>
+			<div class="card-body p-0">
+				<table class="table table-sm mb-0">
+					<thead>
+						<tr><th>Tanggal</th><th>Kategori</th><th>Catatan</th><th class="text-end">Jumlah</th></tr>
+					</thead>
+					<tbody>
+						{% for e in expenses %}
+						<tr>
+							<td>{{ e.entry_date }}</td>
+							<td>{{ e.category.name if e.category else 'Tanpa Kategori' }}</td>
+							<td>{{ e.note or '' }}</td>
+							<td class="text-end">{{ e.amount_cents|currency }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+new Chart(document.getElementById('reportChart'), {
+	type: 'pie',
+	data: { labels: {{ labels|tojson }}, datasets: [{ data: {{ values|tojson }}, backgroundColor: ['#0d6efd','#6f42c1','#198754','#dc3545','#fd7e14','#20c997','#6c757d'] }] },
+	options: { plugins: { legend: { position: 'bottom' } } }
+});
+</script>
+{% endblock %}
