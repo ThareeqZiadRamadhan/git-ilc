@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+{% block title %}Uang Pinjaman{% endblock %}
+{% block content %}
+<h3 class="mb-3">Uang Pinjaman</h3>
+<form method="post" class="row g-2 align-items-end mb-3">
+	<div class="col-md-2">
+		<label class="form-label">Tanggal</label>
+		<input type="date" class="form-control" name="entry_date" />
+	</div>
+	<div class="col-md-2">
+		<label class="form-label">Arah</label>
+		<select name="direction" class="form-select">
+			<option value="keluar">Keluar (meminjamkan)</option>
+			<option value="masuk">Masuk (meminjam)</option>
+		</select>
+	</div>
+	<div class="col-md-3">
+		<label class="form-label">Pihak</label>
+		<input class="form-control" name="counterparty" placeholder="Nama" />
+	</div>
+	<div class="col-md-3">
+		<label class="form-label">Jumlah</label>
+		<input class="form-control currency-input" name="amount" inputmode="numeric" placeholder="0" />
+	</div>
+	<div class="col-md-2">
+		<label class="form-label">Catatan</label>
+		<input class="form-control" name="note" />
+	</div>
+	<div class="col-12">
+		<button class="btn btn-primary">Tambah</button>
+	</div>
+</form>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr><th>Tanggal</th><th>Arah</th><th>Pihak</th><th>Catatan</th><th class="text-end">Jumlah</th><th style="width:170px">Aksi</th></tr>
+	</thead>
+	<tbody>
+		{% for l in loans %}
+		<tr>
+			<form method="post" action="{{ url_for('loan_edit', loan_id=l.id) }}">
+			<td><input type="date" name="entry_date" class="form-control form-control-sm" value="{{ l.entry_date }}" /></td>
+			<td>
+				<select name="direction" class="form-select form-select-sm">
+					<option value="keluar" {{ 'selected' if l.direction=='keluar' else '' }}>Keluar</option>
+					<option value="masuk" {{ 'selected' if l.direction=='masuk' else '' }}>Masuk</option>
+				</select>
+			</td>
+			<td><input name="counterparty" class="form-control form-control-sm" value="{{ l.counterparty }}" /></td>
+			<td><input name="note" class="form-control form-control-sm" value="{{ l.note or '' }}" /></td>
+			<td><input name="amount" class="form-control form-control-sm currency-input" value="{{ l.amount_cents|currency }}" /></td>
+			<td>
+				<div class="d-flex gap-1">
+					<button class="btn btn-sm btn-success">Simpan</button>
+					<form method="post" action="{{ url_for('loan_delete', loan_id=l.id) }}" onsubmit="return confirm('Hapus data?')">
+						<button class="btn btn-sm btn-danger">Hapus</button>
+					</form>
+				</div>
+			</td>
+			</form>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

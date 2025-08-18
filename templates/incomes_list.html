@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block title %}Uang Mingguan{% endblock %}
+{% block content %}
+<h3 class="mb-3">Uang Mingguan</h3>
+<form method="post" class="row g-2 align-items-end mb-3">
+	<div class="col-md-3">
+		<label class="form-label">Tanggal</label>
+		<input type="date" class="form-control" name="entry_date" />
+	</div>
+	<div class="col-md-4">
+		<label class="form-label">Jumlah</label>
+		<input class="form-control currency-input" name="amount" inputmode="numeric" placeholder="0" />
+	</div>
+	<div class="col-md-4">
+		<label class="form-label">Catatan</label>
+		<input class="form-control" name="note" />
+	</div>
+	<div class="col-md-1">
+		<button class="btn btn-primary w-100">Tambah</button>
+	</div>
+</form>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr><th>Tanggal</th><th>Catatan</th><th class="text-end">Jumlah</th><th style="width:170px">Aksi</th></tr>
+	</thead>
+	<tbody>
+		{% for w in incomes %}
+		<tr>
+			<form method="post" action="{{ url_for('income_edit', inc_id=w.id) }}">
+			<td><input type="date" name="entry_date" class="form-control form-control-sm" value="{{ w.entry_date }}" /></td>
+			<td><input name="note" class="form-control form-control-sm" value="{{ w.note or '' }}" /></td>
+			<td><input name="amount" class="form-control form-control-sm currency-input" value="{{ w.amount_cents|currency }}" /></td>
+			<td>
+				<div class="d-flex gap-1">
+					<button class="btn btn-sm btn-success">Simpan</button>
+					<form method="post" action="{{ url_for('income_delete', inc_id=w.id) }}" onsubmit="return confirm('Hapus data?')">
+						<button class="btn btn-sm btn-danger">Hapus</button>
+					</form>
+				</div>
+			</td>
+			</form>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
