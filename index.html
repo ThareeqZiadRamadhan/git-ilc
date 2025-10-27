@@ -3,11 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INI PUNYAKU 2</title>
+    <title>Client Success Spotlights - Landing Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>INI SAYA</h1>
-    <h2>INI KEDUA</h2>
+    <!-- Main Container -->
+    <div class="container-fluid py-5">
+        
+        <!-- Client Success Spotlights Section -->
+        <section class="client-spotlights mb-5">
+            <div class="container">
+                <!-- Header -->
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="display-5 fw-bold text-dark mb-3">Client Success Spotlights</h2>
+                        <p class="lead text-muted">Discover real-life success stories of businesses that overcame challenges and achieved remarkable growth. Let these inspirational customer journeys guide your journey.</p>
+                        <div class="d-flex justify-content-center align-items-center mt-4">
+                            <button class="btn btn-primary me-2" id="viewAllBtn">
+                                View all <i class="fas fa-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Success Cards -->
+                <div class="row justify-content-center g-4">
+                    <div class="col-xl-10">
+                        <div class="row g-4">
+                            <!-- Market Expansion Card -->
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="success-card h-100 position-relative">
+                                    <div class="card-header d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h4 class="fw-bold text-white mb-2">Market Expansion</h4>
+                                            <p class="text-light opacity-75 small mb-0">Market expansion focuses on reaching new opportunities and expanding customer base effectively.</p>
+                                        </div>
+                                        <div class="card-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-image">
+                                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                             alt="Business meeting for market expansion" class="img-fluid rounded">
+                                    </div>
+                                    <div class="success-badge">
+                                        <span class="badge bg-dark rounded-pill">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Customer Support Card -->
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="success-card h-100 position-relative featured">
+                                    <div class="card-header d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h4 class="fw-bold text-white mb-2">Customer Support</h4>
+                                            <p class="text-light opacity-75 small mb-0">Customer support ensures seamless experience and satisfaction through dedicated service excellence.</p>
+                                        </div>
+                                        <div class="card-icon">
+                                            <i class="fas fa-headset"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-image">
+                                        <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                             alt="Customer support team helping clients" class="img-fluid rounded">
+                                    </div>
+                                    <div class="success-badge">
+                                        <span class="badge bg-primary rounded-pill">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Partnership System Card -->
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="success-card h-100 position-relative">
+                                    <div class="card-header d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h4 class="fw-bold text-white mb-2">Partnership System</h4>
+                                            <p class="text-light opacity-75 small mb-0">Our partnership system fosters strong collaboration for mutual growth and success.</p>
+                                        </div>
+                                        <div class="card-icon">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-image">
+                                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                             alt="Business partnership meeting" class="img-fluid rounded">
+                                    </div>
+                                    <div class="success-badge">
+                                        <span class="badge bg-dark rounded-pill">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="display-5 fw-bold text-dark mb-3">Hear From Our Satisfied Clients</h2>
+                        <p class="lead text-muted mb-5">Hear from our Satisfied Clients who have witnessed testimonials and feedback from those who have experienced our services.</p>
+                        
+                        <!-- Testimonial Card -->
+                        <div class="testimonial-card mx-auto">
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center mb-4 mb-md-0">
+                                    <div class="client-photo">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                                             alt="Client testimonial" class="img-fluid rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-start">
+                                    <div class="stars mb-3">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star-half-alt text-warning"></i>
+                                    </div>
+                                    <blockquote class="testimonial-text mb-3">
+                                        "Incredible service and expertise! The team at Stratify helped us streamline our business processes, resulting in greater efficiency and profitability. Highly recommended!"
+                                    </blockquote>
+                                </div>
+                            </div>
+                            
+                            <!-- Navigation Dots -->
+                            <div class="testimonial-nav text-center mt-4">
+                                <button class="nav-dot active" data-slide="0"></button>
+                                <button class="nav-dot" data-slide="1"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer bg-dark text-light py-5 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h5 class="fw-bold mb-3">Client Success</h5>
+                        <p class="text-light opacity-75 mb-3">Empowering businesses to achieve remarkable growth through strategic solutions and exceptional service.</p>
+                        <div class="social-links">
+                            <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-light me-3"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h6 class="fw-bold mb-3">Services</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">Market Expansion</a></li>
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">Customer Support</a></li>
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">Partnership System</a></li>
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">Business Strategy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h6 class="fw-bold mb-3">Company</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">About Us</a></li>
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">Our Team</a></li>
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">Careers</a></li>
+                            <li class="mb-2"><a href="#" class="text-light opacity-75 text-decoration-none">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <h6 class="fw-bold mb-3">Get In Touch</h6>
+                        <div class="contact-info">
+                            <p class="text-light opacity-75 mb-2">
+                                <i class="fas fa-envelope me-2"></i>
+                                info@clientsuccess.com
+                            </p>
+                            <p class="text-light opacity-75 mb-2">
+                                <i class="fas fa-phone me-2"></i>
+                                +1 (555) 123-4567
+                            </p>
+                            <p class="text-light opacity-75 mb-3">
+                                <i class="fas fa-map-marker-alt me-2"></i>
+                                123 Business St, Suite 100<br>
+                                New York, NY 10001
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4 opacity-25">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="text-light opacity-75 mb-0">&copy; 2024 Client Success. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-light opacity-75 text-decoration-none me-3">Privacy Policy</a>
+                        <a href="#" class="text-light opacity-75 text-decoration-none">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
