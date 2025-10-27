@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2B Business Solutions</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #6366f1;
+            --dark-bg: #1f2937;
+            --light-bg: #f9fafb;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --border-color: #e5e7eb;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+        }
+
+        /* Button Styles */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            border-color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .nav-btn.prev,
+        .nav-btn.next {
+            background: var(--dark-bg);
+            color: white;
+            border-color: var(--dark-bg);
+        }
+
+        .nav-btn.prev:hover,
+        .nav-btn.next:hover {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Client Success Spotlights Section */
+        .success {
+            background: var(--light-bg);
+        }
+
+        .success-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .success h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 500px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .card.light-card {
+            background: #f8fafc;
+        }
+
+        .card.light-card:nth-child(2) {
+            background: var(--dark-bg);
+            color: white;
+        }
+
+        .card.light-card:nth-child(2) p {
+            color: #d1d5db;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Testimonial Section */
+        .testimonial {
+            background: white;
+            text-align: center;
+        }
+
+        .testimonial h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .testimonial-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background: #f8fafc;
+            border-radius: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .testimonial-text {
+            text-align: left;
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-quote {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--light-bg);
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: var(--text-dark);
+        }
+
+        .price-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .price-card.featured {
+            background: var(--dark-bg);
+            color: white;
+            transform: scale(1.05);
+            border: 3px solid var(--primary-color);
+        }
+
+        .price-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .price-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .price-card span {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 24px;
+        }
+
+        .price-card.featured span {
+            color: white;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .price-card li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-card input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .plan-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .plan-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .price-card:not(.featured) .plan-btn {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .price-card:not(.featured) .plan-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Knowledge Hub Section */
+        .knowledge {
+            background: white;
+        }
+
+        .knowledge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .knowledge-nav {
+            display: flex;
+            gap: 16px;
+        }
+
+        .knowledge-cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .knowledge-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .knowledge-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .knowledge-card h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 24px 24px 16px;
+            color: var(--text-dark);
+        }
+
+        .knowledge-card p {
+            padding: 0 24px 24px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .success-header,
+            .knowledge-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonial-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .testimonial-text {
+                text-align: center;
+            }
+            
+            .card-grid,
+            .knowledge-cards-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-card.featured {
+                transform: none;
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .card,
+            .price-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="vh-100">
+        <!-- SECTION 5 - Client Success Spotlights -->
+        <section class="success">
+            <div class="container">
+                <div class="success-header">
+                    <div>
+                        <h2>Client Success Spotlights</h2>
+                        <p class="subtitle">Discover real-life success stories of businesses that overcame challenges and achieved remarkable growth. Let these inspiring journeys motivate your path to success</p>
+                    </div>
+                    <button class="btn-outline">View all &rarr;</button>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card light-card">
+                        <div class="card-header">
+                            <h4>Market Expansion</h4>
+                            <button class="nav-btn" id="next-testimonial"><span>&rarr;</span></button>
+                        </div>
+                        <p>Market expansion focuses on unlocking new opportunities and reaching wider audiences.</p>
+                        <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=400&h=200&fit=crop" alt="Market Expansion" />
+                    </div>
+
+                    <div class="card light-card">
+                        <div class="card-header">
+                            <h4>Customer Support</h4>
+                            <button class="nav-btn" id="next-testimonial"><span>&rarr;</span></button>
+                        </div>
+                        <p>Customer support ensures seamless assistance and satisfaction through reliable solutions.</p>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=200&fit=crop" alt="Customer Support" />
+                    </div>
+
+                    <div class="card light-card">
+                        <div class="card-header">
+                            <h4>Partnership System</h4>
+                            <button class="nav-btn" id="next-testimonial"><span>&rarr;</span></button>
+                        </div>
+                        <p>Our partnership system fosters strong collaborations for mutual growth and success.</p>
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=200&fit=crop" alt="Partnership System" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6 - Testimonial -->
+        <section class="testimonial">
+            <div class="container">
+                <h2>Hear From Our Satisfied Clients</h2>
+                <p class="testimonial-subtitle">
+                    Hear From Our Satisfied Clients showcases authentic testimonials and feedback from those who have experienced our services.
+                </p>
+                <div class="testimonial-content" id="testimonial-content">
+                </div>
+                <div class="testimonial-nav">
+                    <button class="nav-btn" id="prev-testimonial"><span>&larr;</span></button>
+                    <button class="nav-btn" id="next-testimonial"><span>&rarr;</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7 - Pricing -->
+        <section class="pricing">
+            <div class="container">
+                <h2>Transparent Pricing for You</h2>
+                <p style="text-align: center; margin-bottom: 40px; color: var(--text-light);">We offer clear, transparent pricing with no hidden fees. Choose the perfect plan that fits your business needs and budget.</p>
+                
+                <!-- Pricing Toggle -->
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <div style="display: inline-flex; background: #f3f4f6; border-radius: 12px; padding: 4px;">
+                        <button style="padding: 12px 24px; border: none; background: var(--dark-bg); color: white; border-radius: 8px; font-weight: 600;">Monthly</button>
+                        <button style="padding: 12px 24px; border: none; background: transparent; color: var(--text-dark); border-radius: 8px; font-weight: 600;">Yearly</button>
+                    </div>
+                </div>
+
+                <div class="card-grid">
+                    <div class="price-card" id="plan-free">
+                        <h3>Free Plan</h3>
+                        <span>$0</span>
+                        <p style="text-align: center; color: var(--text-light); margin-bottom: 24px;">Per user/month, Annual</p>
+                        <p style="text-align: center; font-weight: 600; margin-bottom: 24px;">Feature for this</p>
+                        <ul>
+                            <li><label><input type="checkbox" checked disabled /> HR compliance audit</label></li>
+                            <li><label><input type="checkbox" checked disabled /> Document management</label></li>
+                            <li><label><input type="checkbox" disabled /> 24/7 Support at Any Time</label></li>
+                            <li><label><input type="checkbox" disabled /> Unlimited Project</label></li>
+                            <li><label><input type="checkbox" disabled /> Corrective action plan</label></li>
+                            <li><label><input type="checkbox" disabled /> Leadership training programs</label></li>
+                        </ul>
+                        <button class="plan-btn">Get Started</button>
+                    </div>
+
+                    <div class="price-card featured" id="plan-pro">
+                        <h3>Pro Plan</h3>
+                        <span>$50</span>
+                        <p style="text-align: center; color: #d1d5db; margin-bottom: 24px;">Per user/month, Annual</p>
+                        <p style="text-align: center; font-weight: 600; margin-bottom: 24px;">Feature for this</p>
+                        <ul>
+                            <li><label><input type="checkbox" checked disabled /> HR compliance audit</label></li>
+                            <li><label><input type="checkbox" checked disabled /> Document management</label></li>
+                            <li><label><input type="checkbox" checked disabled /> 24/7 Support at Any Time</label></li>
+                            <li><label><input type="checkbox" disabled /> Unlimited Project</label></li>
+                            <li><label><input type="checkbox" disabled /> Corrective action plan</label></li>
+                            <li><label><input type="checkbox" disabled /> Leadership training programs</label></li>
+                        </ul>
+                        <button class="plan-btn">Get Started</button>
+                    </div>
+
+                    <div class="price-card" id="plan-enterprise">
+                        <h3>Enterprise Plan</h3>
+                        <span>$100</span>
+                        <p style="text-align: center; color: var(--text-light); margin-bottom: 24px;">Per user/month, Annual</p>
+                        <p style="text-align: center; font-weight: 600; margin-bottom: 24px;">Feature for this</p>
+                        <form id="enterprise-form">
+                            <ul>
+                                <li><label><input type="checkbox" name="features" value="HR compliance audit" checked /> HR compliance audit</label></li>
+                                <li><label><input type="checkbox" name="features" value="Document management" checked /> Document management</label></li>
+                                <li><label><input type="checkbox" name="features" value="24/7 Support at Any Time" /> 24/7 Support at Any Time</label></li>
+                                <li><label><input type="checkbox" name="features" value="Unlimited Project" /> Unlimited Project</label></li>
+                                <li><label><input type="checkbox" name="features" value="Corrective action plan" /> Corrective action plan</label></li>
+                                <li><label><input type="checkbox" name="features" value="Leadership training programs" /> Leadership training programs</label></li>
+                            </ul>
+                            <button type="submit" class="plan-btn">Get Started</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Explore Plans Button -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <button style="background: var(--primary-color); color: white; border: none; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer;">Explore plan</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8 - Knowledge Hub -->
+        <section class="knowledge" id="knowledge">
+            <div class="container">
+                <div class="knowledge-header">
+                    <div>
+                        <h2 class="section-title">The Knowledge Hub</h2>
+                        <p class="section-subtitle">
+                            The Knowledge Hub brings you expert insights, industry trends, and strategic advice.
+                            Stay informed and ahead with valuable resources for business growth and success.
+                        </p>
+                    </div>
+                    <div class="knowledge-nav">
+                        <button class="nav-btn prev">&larr;</button>
+                        <button class="nav-btn next">&rarr;</button>
+                    </div>
+                </div>
+
+                <div class="knowledge-cards-wrapper">
+                    <div class="knowledge-card">
+                        <img src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?w=400&h=250&fit=crop" alt="Business Growth">
+                        <h4>Business Growth Insights</h4>
+                        <p>
+                            Business Growth Insights provides expert strategies, trends, and tips to help companies scale effectively.
+                        </p>
+                    </div>
+                    <div class="knowledge-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=250&fit=crop" alt="Innovation">
+                        <h4>Innovation & Leadership</h4>
+                        <p>
+                            Innovation strategies that build competitive edge through visionary leadership and agile teams.
+                        </p>
+                    </div>
+                    <div class="knowledge-card">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop" alt="Success Stories">
+                        <h4>Success Stories</h4>
+                        <p>
+                            Real-world examples of businesses that achieved transformation and excellence through expert guidance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // DOM Elements
+        const testimonialContent = document.getElementById('testimonial-content');
+        const prevTestimonialBtn = document.getElementById('prev-testimonial');
+        const nextTestimonialBtn = document.getElementById('next-testimonial');
+        const enterpriseForm = document.getElementById('enterprise-form');
+        const knowledgeNav = document.querySelectorAll('.knowledge-nav .nav-btn');
+        const knowledgeCards = document.querySelector('.knowledge-cards-wrapper');
+
+        // Testimonials data
+        const testimonials = [
+            {
+                avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+                name: 'John Smith',
+                company: 'Tech Solutions Inc.',
+                rating: 4.5,
+                quote: 'Incredible service and expertise! The team at Stratify helped us streamline our business processes, resulting in greater efficiency and profitability. Highly recommended!'
+            },
+            {
+                avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face',
+                name: 'Sarah Johnson',
+                company: 'Marketing Pro Ltd.',
+                rating: 5,
+                quote: 'Outstanding partnership! Their innovative approach and dedicated support have transformed our marketing strategy and delivered exceptional results beyond our expectations.'
+            },
+            {
+                avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+                name: 'Michael Chen',
+                company: 'Global Enterprises',
+                rating: 4.5,
+                quote: 'Professional excellence at its finest! The comprehensive solutions and expert guidance provided have significantly improved our operational efficiency and market position.'
+            }
+        ];
+
+        // Current testimonial index
+        let currentTestimonialIndex = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTestimonials();
+            initializePricingForm();
+            initializeKnowledgeHub();
+            initializeAnimations();
+        });
+
+        // Testimonials functionality
+        function initializeTestimonials() {
+            if (testimonialContent) {
+                renderTestimonial(currentTestimonialIndex);
+                
+                // Event listeners for navigation
+                if (prevTestimonialBtn) {
+                    prevTestimonialBtn.addEventListener('click', () => {
+                        currentTestimonialIndex = currentTestimonialIndex === 0 
+                            ? testimonials.length - 1 
+                            : currentTestimonialIndex - 1;
+                        renderTestimonial(currentTestimonialIndex);
+                    });
+                }
+                
+                if (nextTestimonialBtn) {
+                    nextTestimonialBtn.addEventListener('click', () => {
+                        currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                        renderTestimonial(currentTestimonialIndex);
+                    });
+                }
+                
+                // Auto-rotate testimonials every 5 seconds
+                setInterval(() => {
+                    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+                    renderTestimonial(currentTestimonialIndex);
+                }, 5000);
+            }
+        }
+
+        function renderTestimonial(index) {
+            const testimonial = testimonials[index];
+            const starsHtml = generateStars(testimonial.rating);
+            
+            testimonialContent.innerHTML = `
+                <img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-avatar">
+                <div class="testimonial-text">
+                    <div class="stars">${starsHtml}</div>
+                    <p class="testimonial-quote">"${testimonial.quote}"</p>
+                    <div class="testimonial-author">
+                        <strong>${testimonial.name}</strong><br>
+                        <small>${testimonial.company}</small>
+                    </div>
+                </div>
+            `;
+            
+            // Add fade-in animation
+            testimonialContent.style.opacity = '0';
+            setTimeout(() => {
+                testimonialContent.style.opacity = '1';
+            }, 100);
+        }
+
+        function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            let starsHtml = '';
+            
+            for (let i = 0; i < fullStars; i++) {
+                starsHtml += '★';
+            }
+            
+            if (hasHalfStar) {
+                starsHtml += '☆';
+            }
+            
+            // Fill remaining stars
+            const remainingStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < remainingStars; i++) {
+                starsHtml += '☆';
+            }
+            
+            return starsHtml;
+        }
+
+        // Pricing form functionality
+        function initializePricingForm() {
+            if (enterpriseForm) {
+                enterpriseForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(enterpriseForm);
+                    const selectedFeatures = formData.getAll('features');
+                    
+                    // Calculate estimated price based on selected features
+                    const basePrice = 100;
+                    const featurePrice = 50;
+                    const estimatedPrice = basePrice + (selectedFeatures.length * featurePrice);
+                    
+                    // Show alert with selected features and price
+                    alert(`Enterprise Plan Quote:\n\nSelected Features:\n${selectedFeatures.join('\n')}\n\nEstimated Monthly Price: $${estimatedPrice}\n\nOur sales team will contact you within 24 hours to finalize your custom plan.`);
+                });
+            }
+        }
+
+        // Knowledge Hub functionality
+        function initializeKnowledgeHub() {
+            if (knowledgeNav.length > 0) {
+                knowledgeNav.forEach((btn, index) => {
+                    btn.addEventListener('click', () => {
+                        if (index === 0) { // Previous button
+                            scrollKnowledgeCards('prev');
+                        } else { // Next button
+                            scrollKnowledgeCards('next');
+                        }
+                    });
+                });
+            }
+        }
+
+        function scrollKnowledgeCards(direction) {
+            const cardWidth = 350 + 30; // Card width + gap
+            const container = knowledgeCards;
+            
+            if (direction === 'next') {
+                container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            } else {
+                container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            }
+        }
+
+        // Animations and interactions
+        function initializeAnimations() {
+            // Add hover effects to cards
+            document.querySelectorAll('.card, .price-card, .knowledge-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add smooth scrolling animations on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.card, .price-card, .knowledge-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .testimonial-content {
+                transition: opacity 0.3s ease;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
